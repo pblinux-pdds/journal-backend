@@ -1,0 +1,12 @@
+services:
+  journal-backend:
+    image: 579562266804.dkr.ecr.us-west-1.amazonaws.com/pbrojas-journal-backend:latest
+    restart: always
+    ports:
+      - "80:3000"
+    environment:
+      - NODE_ENV=production
+      - AWS_BUCKET_NAME=${AWS_BUCKET_NAME}
+      - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+      - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
+      - AWS_REGION=${AWS_REGION}

@@ -18,9 +18,9 @@ phases:
       # Publish image to ECR
       - echo Pushing the Docker image...
       - docker push $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$CONTAINER_TAG
-      # Update ECS service to use the new image
-      - aws ecs update-service \
-          --cluster $ECS_CLUSTER_NAME \
-          --service $ECS_SERVICE_NAME \
-          --force-new-deployment \
-          --image $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$CONTAINER_TAG
+
+artifacts:
+  files:
+    - 'docker-compose.yml'
+    - '.dockerignore'
+  name: journal-backend-artifacts
