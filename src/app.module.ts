@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { EntryController } from './entry/entry.controller';
 import { EntryService } from './entry/entry.service';
 import { ConfigModule } from '@nestjs/config';
+import { HealthController } from './health/health.controller';
 
 @Module({
   imports: [
@@ -9,7 +10,12 @@ import { ConfigModule } from '@nestjs/config';
       isGlobal: true,
     })
   ],
-  controllers: [EntryController],
-  providers: [EntryService],
+  controllers: [
+    EntryController,
+    HealthController
+  ],
+  providers: [
+    EntryService
+  ],
 })
 export class AppModule {}

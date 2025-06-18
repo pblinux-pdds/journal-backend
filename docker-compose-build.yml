@@ -5,7 +5,7 @@ services:
       tags:
         - journal-backend:latest
     ports:
-      - "8080:3000"
+      - "80:3000"
     environment:
       - NODE_ENV=production
       - AWS_BUCKET_NAME=${AWS_BUCKET_NAME}
