@@ -3,7 +3,7 @@ services:
     build:
       context: .
       tags:
-        - journal-backend:latest
+        - pbrojas-journal-backend:latest
     ports:
       - "80:3000"
     environment:
